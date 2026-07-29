@@ -1,82 +1,46 @@
-# 🔗 Pendekin - Premium URL Shortener & Analytics Platform
+# 🔗 Pendekin
 
-**Pendekin** adalah platform pemendek tautan (URL Shortener) modern dan premium berbasis SaaS yang dilengkapi dengan analitik lalu lintas mendalam, QR Code studio dinamis, integrasi API pengembang, pusat bantuan, dan dashboard manajemen admin yang komprehensif.
-
-Dibuat menggunakan kombinasi teknologi tangguh modern: **Laravel + React (TypeScript) + Inertia.js + Tailwind CSS**.
+**Pendekin** adalah platform pemendek URL yang sederhana, rapi, dan cepat. Dibuat untuk membantu siapa saja merapikan link panjang, melacak statistik pengunjung, dan mengelola tautan dengan mudah dalam satu dashboard.
 
 ---
 
-## 🚀 Fitur Utama
+## 🌟 Fitur & Keunggulan Pendekin
 
-### 1. Fitur Publik & Pengunjung (Public Area)
-* **Quick Shorten Instan:** Pengunjung umum dapat memendekkan tautan langsung dari Landing Page.
-* **Integrasi Guest Support:** Form kontak publik `/contact` yang memungkinkan pengunjung umum mengirim pengaduan bantuan secara anonim tanpa wajib memiliki akun.
-* **Aduan Penyalahgunaan (`/report`):** Membantu menjaga platform tetap aman dari tautan spam/negatif dengan fitur kompresi bukti screenshot otomatis (GD PHP) di bawah 300KB untuk efisiensi penyimpanan server.
+### 1. Merapikan & Mengatur Link
+* **Pemendek Instan**: Tempel URL panjang dan dapatkan link pendek yang siap dibagikan.
+* **Custom Alias (Slug)**: Buat akhiran link sesuai keinginan agar lebih mudah dihafal (misal: `pendekin.id/promo-diskon`).
+* **Proteksi Password**: Kunci link tertentu dengan kata sandi agar hanya orang tertentu yang bisa mengaksesnya.
+* **Batas Klik & Expired Date**: Atur kapan link otomatis tidak bisa diakses atau berhenti setelah mencapai jumlah klik tertentu.
 
-### 2. Dashboard Pengguna (User Area)
-* **Manajemen Tautan Lengkap:** Pembuatan short link dengan kustom alias (slug), batas maksimum klik, tanggal kedaluwarsa link, dan proteksi kata sandi (*password protected*).
-* **QR Code Studio Dinamis:** Hasilkan QR Code secara instan dengan kustomisasi warna latar belakang/pola dan unduh ke format SVG (cetak) atau PNG (web).
-* **Analitik Realtime & Geografis:** Grafik tren klik (Recharts), pelacakan asal negara pengunjung (GeoIP), rujukan (*referrer*), serta pembagian jenis perangkat & browser.
-* **Developer API Access:** Pengguna paket pengembang dapat membuat token API kunci secara dinamis lengkap dengan monitoring penggunaan rate-limiting dan dokumentasi terpadu.
-* **Helpdesk Tickets:** Ajukan pertanyaan atau kendala langsung ke admin melalui modul tiket internal.
-* **SaaS Billing & Upgrade:** Pilihan paket *Free, Pro,* dan *Business* yang terintegrasi secara otomatis dengan gateway pembayaran **Midtrans** (termasuk fitur trial dan pembatalan langganan).
+### 2. QR Code Studio
+* Generator QR Code otomatis untuk setiap link pendek.
+* Bebas ubah warna latar belakang dan warna pola QR Code.
+* Unduh langsung dalam format PNG (untuk web/medsos) atau SVG (untuk kebutuhan cetak).
 
-### 3. Panel Moderasi & Administrasi (Admin Area)
-* **Overview Traffic Global:** Grafik visual pendaftaran pengguna, volume klik link, dan riwayat pemasukan biaya langganan bulanan.
-* **Manajemen & Suspend User/Link:** Blokir akun bermasalah atau tangguhkan tautan yang terindikasi melanggar aturan secara aman (soft deleted & restore).
-* **Pusat Bantuan Admin:** Balas tiket dukungan, ubah status tiket, dan alokasikan tiket ke staf tertentu.
-* **API Health & Audit Logs:** Monitor performa endpoint API pengembang serta rekam jejak log aktivitas tindakan admin di dalam sistem.
-* **Pengaturan Sistem Dinamis:** Ubah konfigurasi bypass mode pemeliharaan (*maintenance code*), kunci bypass, dan kredensial pembayaran langsung dari UI.
+### 3. Analitik Pengunjung
+* Pantau jumlah klik dan tren pengunjung dari waktu ke waktu.
+* Lihat statistik lokasi (negara) pengunjung.
+* Ketahui jenis perangkat (HP, Laptop/Desktop, Tablet) dan browser yang digunakan pengunjung.
 
----
+### 4. Layanan Bantuan & Keamanan
+* **Hubungi Kami**: Halaman bantuan untuk mengirim pesan atau kendala tanpa harus login.
+* **Laporkan Tautan**: Pengunjung dapat melaporkan link spam atau berbahaya untuk menjaga keamanan bersama.
 
-## 🛠️ Stack Teknologi
-
-* **Backend / Core:** PHP 8.2+ & Laravel 11
-* **Frontend:** React 19, TypeScript, Inertia.js (SPA Mode)
-* **Styling / Design:** Tailwind CSS v4 & Lucide Icons
-* **Database & Caching:** MySQL / PostgreSQL & Redis (Cache & Session)
-* **Charts:** Recharts
-* **Payment Gateway:** Midtrans API
+### 5. Panel Admin & Moderasi
+* Monitoring aktivitas pengguna dan statistik seluruh platform.
+* Moderasi tautan bermasalah dan penanganan laporan penyalahgunaan.
+* Pusat bantuan internal untuk membalas pesan pengaduan pengguna.
 
 ---
 
-## ⚙️ Panduan Instalasi Lokal
+## 💻 Teknologi yang Digunakan
 
-### 1. Klon Repositori
-```bash
-git clone https://github.com/username/short-link.git
-cd short-link
-```
-
-### 2. Konfigurasi Environment & PHP Dependencies
-Copy file `.env.example` menjadi `.env`, lalu sesuaikan database, konfigurasi pos email, dan API Midtrans Anda:
-```bash
-cp .env.example .env
-composer install
-php artisan key:generate
-```
-
-### 3. Migrasi & Seed Database
-Jalankan migrasi database beserta data default/uji awal (termasuk user dummy, paket harga, dan setting default):
-```bash
-php artisan migrate --seed
-```
-
-### 5. Instalasi Frontend Dependencies & Compile
-```bash
-npm install
-npm run build # Atau 'npm run dev' untuk mode development
-```
-
-### 6. Jalankan Server Lokal
-```bash
-php artisan serve
-```
-Buka `http://127.0.0.1:8000` pada browser Anda.
+- **Backend**: Laravel (PHP)
+- **Frontend**: React (TypeScript) & Inertia.js
+- **Styling**: Tailwind CSS
+- **Database & Cache**: MySQL & Redis
+- **Payment**: Midtrans
 
 ---
 
-## 🛡️ Lisensi
-
-Proyek platform **Pendekin** dilisensikan di bawah [MIT license](LICENSE).
+&copy; Pendekin - Perpendek link. Bagikan lebih mudah.

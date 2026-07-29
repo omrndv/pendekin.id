@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pendekin_app
+    restart: always
+    environment:
+      APP_ENV: production
+      APP_DEBUG: 'false'
+      CACHE_STORE: redis
+      QUEUE_CONNECTION: redis
+      SESSION_DRIVER: redis
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: pendekin_redis
+    restart: always
+    ports:
+      - "6379:6379"
+
+  queue_worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pendekin_worker
+    restart: always
+    command: php artisan queue:work redis --tries=3 --timeout=90
+    depends_on:
+      - app
+      - redis

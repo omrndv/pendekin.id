@@ -1,0 +1,40 @@
+name: CI/CD Pipeline & Production Build Test
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    services:
+      redis:
+        image: redis
+        ports:
+          - 6379:6379
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, pdo, pdo_mysql, redis, gd
+
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Setup Node & Build Assets
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Frontend Dependencies
+        run: npm ci
+
+      - name: Build Frontend Assets
+        run: npm run build

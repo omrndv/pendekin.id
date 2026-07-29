@@ -8,14 +8,14 @@
 
 ### 1. Merapikan & Mengatur Link
 * **Pemendek Instan**: Tempel URL panjang dan dapatkan link pendek yang siap dibagikan.
-* **Custom Alias (Slug)**: Buat akhiran link sesuai keinginan agar lebih mudah dihafal (misal: `pendekin.id/promo-diskon`).
+* **Custom Alias (Slug)**: Buat akhiran link sesuai keinginan agar lebih mudah dihafal (misal: `pdk.id/promo-diskon`).
 * **Proteksi Password**: Kunci link tertentu dengan kata sandi agar hanya orang tertentu yang bisa mengaksesnya.
 * **Batas Klik & Expired Date**: Atur kapan link otomatis tidak bisa diakses atau berhenti setelah mencapai jumlah klik tertentu.
 
 ### 2. QR Code Studio
 * Generator QR Code otomatis untuk setiap link pendek.
 * Bebas ubah warna latar belakang dan warna pola QR Code.
-* Unduh langsung dalam format PNG (untuk web/medsos) atau SVG (untuk kebutuhan cetak).
+* Unduh langsung dalam format gambar PNG resolusi tinggi.
 
 ### 3. Analitik Pengunjung
 * Pantau jumlah klik dan tren pengunjung dari waktu ke waktu.

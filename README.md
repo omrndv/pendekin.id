@@ -39,7 +39,6 @@
 - **Frontend**: React (TypeScript) & Inertia.js
 - **Styling**: Tailwind CSS
 - **Database & Cache**: MySQL & Redis
-- **Payment**: Midtrans
 
 ---
 
